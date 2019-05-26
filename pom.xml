@@ -33,20 +33,31 @@
 
 	<build>
 		<plugins>
+			<!-- build a executable jar -->
 			<plugin>
-				<!-- Build an executable JAR -->
 				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-jar-plugin</artifactId>
-				<version>3.1.0</version>
-				<configuration>
-					<archive>
-						<manifest>
-							<addClasspath>true</addClasspath>
-							<classpathPrefix>lib/</classpathPrefix>
-							<mainClass>com.ahei.gonetty.App</mainClass>
-						</manifest>
-					</archive>
-				</configuration>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+						<configuration>
+							<archive>
+								<manifest>
+									<mainClass>
+										com.ahei.gonetty.App
+									</mainClass>
+								</manifest>
+							</archive>
+							<descriptorRefs>
+								<!-- descriptor will be added to the project name -->
+								<descriptorRef>jar-with-dependencies</descriptorRef>
+							</descriptorRefs>
+						</configuration>
+					</execution>
+				</executions>
 			</plugin>
 
 			<plugin>
@@ -55,7 +66,6 @@
 					<source>1.8</source>
 					<target>1.8</target>
 					<encoding>UTF-8</encoding>
-					<!--<compilerArguments> <extdirs>${project.basedir}\lib</extdirs> </compilerArguments> -->
 				</configuration>
 			</plugin>
 		</plugins>
