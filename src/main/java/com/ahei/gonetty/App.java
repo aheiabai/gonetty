@@ -11,6 +11,11 @@ public class App {
 		if (args.length > 0) {
 			port = Integer.parseInt(args[0]);
 		}
+		/*
+		 * new Thread(new Runnable() {
+		 * 
+		 * @Override public void run() { new Server(8081).run(); } }).start();
+		 */
 		new Server(port).run();
 	}
 }

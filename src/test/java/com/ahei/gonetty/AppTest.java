@@ -18,6 +18,8 @@ public class AppTest
     public AppTest( String testName )
     {
         super( testName );
+        String name = NameGenerator.generator();
+        System.out.println(name);
     }
 
     /**
