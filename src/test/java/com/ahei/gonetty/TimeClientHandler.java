@@ -13,7 +13,7 @@ public class TimeClientHandler extends ChannelInboundHandlerAdapter{
         try {
             long currentTimeMillis = (m.readUnsignedInt() - 2208988800L) * 1000L;
             System.out.println(new Date(currentTimeMillis));
-            ctx.close();
+//            ctx.close();
         } finally {
             m.release();
         }

@@ -26,5 +26,6 @@ public class ServerInitializer extends ChannelInitializer<SocketChannel>{
 		// handler the message
 		cPipe.addLast(new MessageHandler());
 	}
+	
 
 }

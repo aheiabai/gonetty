@@ -11,7 +11,7 @@ import io.netty.channel.socket.nio.NioSocketChannel;
 
 public class Client {
 	public static void main(String[] args) {
-		String host = "localhost";
+		String host = "106.13.103.14";
 		int port = 8080;
 		
 		EventLoopGroup workGroup = new NioEventLoopGroup();
@@ -32,7 +32,9 @@ public class Client {
 			ChannelFuture cf = boot.connect(host, port).sync();
 			System.out.println("Connection is established");
 
-			cf.channel().closeFuture().sync();
+			cf.channel()
+			.closeFuture()
+			.sync();
 			System.out.println("Server shutdown");
 		} catch (InterruptedException e) {
 			e.printStackTrace();

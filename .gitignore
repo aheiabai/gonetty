@@ -15,3 +15,5 @@ buildNumber.properties
 .settings/
 .classpath
 .project
+
+logFile.*

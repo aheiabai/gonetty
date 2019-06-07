@@ -1,5 +1,8 @@
 package com.ahei.gonetty;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelOption;
@@ -8,6 +11,7 @@ import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 
 public class Server {
+	private static final Logger logger = LoggerFactory.getLogger(Server.class);
 	private int port;
 
 	public Server(int port) {
@@ -25,7 +29,7 @@ public class Server {
 			.childOption(ChannelOption.SO_KEEPALIVE, true);
 		try {
 			ChannelFuture cf = boot.bind(port).sync();
-			System.out.println("netty is starting");
+			logger.info("netty is starting");
 
 			// Wait until the server socket is closed.
 			cf.channel().closeFuture().sync();
