@@ -15,14 +15,14 @@
 		</rollingPolicy>
 
 		<encoder>
-			<pattern>%-4relative [%thread] %-5level %logger{35} - %msg%n
+			<pattern>%date [%thread] %-5level %logger{35} - %msg%n
 			</pattern>
 		</encoder>
 	</appender>
 	<appender name="STDOUT"
 		class="ch.qos.logback.core.ConsoleAppender">
 		<encoder>
-			<pattern>%date %level [%thread] %logger{10} %msg%n</pattern>
+			<pattern>%date [%thread] %level %logger{10} - %msg%n</pattern>
 		</encoder>
 	</appender>
 
