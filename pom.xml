@@ -22,7 +22,13 @@
 			<artifactId>netty-all</artifactId>
 			<version>4.1.36.Final</version>
 		</dependency>
-		
+
+		<dependency>
+			<groupId>org.ehcache</groupId>
+			<artifactId>ehcache</artifactId>
+			<version>3.7.0</version>
+		</dependency>
+
 		<dependency>
 			<groupId>ch.qos.logback</groupId>
 			<artifactId>logback-classic</artifactId>
